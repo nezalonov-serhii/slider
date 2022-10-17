@@ -5,7 +5,7 @@ $(document).ready(function () {
       adaptiveHeight: true, //меняет высоту автоматически под высоту фото
       slidesToShow: 3, //Количество отображаемых слайдов
       slidesToScroll: 1, //сколько слайдов пролистывать
-      speed: 1000, //По умолчанию 350ms
+      speed: 1800, //По умолчанию 350ms
       easing: "ease", //liner поумолчанию
       infinite: true, //По умолчанию true slick-disabled
       initialSlide: 0, //Стартовій слайдер по умолчанию 0
@@ -30,6 +30,22 @@ $(document).ready(function () {
 
       // appendArrows: $(".content"),      //Перемещает стрелки
       appendDots: $(".wrap"), //Перемещает точки
+
+      responsive: [
+         //Адаптивка
+         {
+            breakpoint: 768,
+            settings: {
+               slidesToShow: 4,
+            },
+         },
+         {
+            breakpoint: 480,
+            settings: {
+            },
+         },
+      ],
+      mobileFirst: true,
    });
 
    $(".bmw").click(function (event) {
@@ -53,9 +69,10 @@ $(document).ready(function () {
    });
 
    $(".sliderbig").slick({
-      arrows: true,
+      arrows: false,
       speed: 1000,
       infinite: true,
       asNavFor: ".slider", //Связывает два слайдера
    });
+   
 });
